@@ -8,7 +8,7 @@ import { Observable, Observer, Subscription, throwError } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'clientApp';
+  title = 'NCC';
   userdata$:Observable<any>
   constructor(private http:HttpClient)
   {
