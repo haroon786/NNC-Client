@@ -1,0 +1,42 @@
+<div class="bg-img">
+  <div class="login-container">
+    <div class="login-content">
+      <mat-toolbar class="login-toolbar" color="primary">
+      <!-- <fa-icon [icon]="ticket" rotate="125" size="2x"></fa-icon> -->
+      <fa-icon [icon]="fadraftingcompass" size="2x"></fa-icon>
+      <span style="margin-left: 20px;">NNC</span>
+    </mat-toolbar>
+      <mat-card>
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <mat-icon matPrefix>person_outline</mat-icon>
+            <input  type="text" matInput placeholder="email" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" >
+          </mat-form-field>
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Email is required</div>
+            <div *ngIf="f.username.errors.username">Email must be a valid email address</div>
+        </div>
+          <mat-form-field>
+            <mat-icon matPrefix>lock_outline</mat-icon>
+            <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          </mat-form-field>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">password is required</div>
+            <div *ngIf="f.password.errors.password">password is required</div>
+          </div>
+          <button type="submit" mat-raised-button color="primary">Sign In To Account</button>
+          <a href="" style="float: right;" routerLink="/registration" mat-raised-button color="primary">Create Account</a>
+          <!-- <a href="" class="textForgotpassword">Forgot Password ?</a> -->
+
+
+        </form>
+      </mat-card>
+
+    <!-- <div class="footer">
+      <p href="">New To Site ?</p>
+      <a href="" style="margin-top: 20px;" routerLink="/registration">Create Account</a>
+    </div> -->
+  </div>
+</div>
+
+
